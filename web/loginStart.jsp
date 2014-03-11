@@ -18,7 +18,7 @@
         <title>The MRJ Bank</title>
     </head>
     <body>
-         <img src="/photos/mrj.jpg"/><br><h1><b><font size="10" color="orange">The MRJ Bank</font></b></h1>
+         <img src="photos/mrj.jpg"/><br><h1><b><font size="10" color="orange">The MRJ Bank</font></b></h1>
 
         <h1><b><font size="6" color="black">- Main page</font></b></h1><br>
 
