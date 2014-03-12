@@ -29,21 +29,19 @@
         <h1><b><font size="6" color="black">- Customer with <u>${customer.cpr}</u> accountlist</font></b></h1><br>
 
         <hr/>
-        <form action ="Controller" method="post">
         
-        <button type ="submit" name="command" value="account-edit">Create new account</button>
+<form action ="Controller" method="post">
+            <button type ="submit" name="command" value="account-edit">Create new account</button>
+</form>
+            <table border='1'> 
 
-        <table border='1'> 
+                <tr>
+                    <td><b>Kontonummer:</b></td><td><b>Type:</b></td><td><b>Saldo:</b></td>
 
-            <tr>
-                <td><b>Kontonummer:</b></td><td><b>Type:</b></td><td><b>Saldo:</b></td>
+                </tr>
 
-            </tr>
-
-            <c:forEach var="account" items="${accounts}">
-
-                
-
+                <c:forEach var="account" items="${accounts}">
+                    <form action ="Controller" method="post">
                     <input type ="hidden" name ="number" value ="${account.number}">
 
                     <tr>
@@ -52,14 +50,17 @@
                         <td>${account.balance} kr.</td>
                         <td><button type ="submit" name="command" value="show-account-detail">Details</button></td>
                         <td><button type ="submit" name="command" value="prepare-transfer">Transfer</button></td>
-                    </tr>
-                </form>
-            </c:forEach>
-        </table>
-        <br>
-        <hr/> 
 
-        <a href="Controller?command=back">Back to main page</a>
-    </body>
+                    </tr>
+            </form>
+
+        </c:forEach>
+
+    </table>
+    <br>
+    <hr/> 
+
+    <a href="Controller?command=back">Back to main page</a>
+</body>
 
 </html>

@@ -36,7 +36,7 @@
 
         <hr/>
         <ul>
-            <li>customer: ${customer.cpr}</li>
+            <li>Customer: ${customer.cpr}</li>
             <li>Account number: ${account.number}</li>
             <li>Interest: <fmt:formatNumber value="${account.interest}" maxFractionDigits="3" minFractionDigits="3"/></li>
             <li>Type: ${account.type}</li>
@@ -56,11 +56,12 @@
                     <td>${transfer.date}</td>
                     <td> ${transfer.amount}</td> 
                     <td>${transfer.accountNumber}</td>
+                    
                 </tr>
             </c:forEach>
         </table>
 
-
+        </form>
      <br>
     <hr/>
     <a href="Controller?command=back">Back to main page</a>

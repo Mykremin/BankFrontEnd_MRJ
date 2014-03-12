@@ -35,15 +35,7 @@ public class CreateAccountCommand extends TargetCommand {
         
        String cpr = request.getParameter("cpr");       
        CustomerIdentifier customer = CustomerIdentifier.fromString(cpr);
-        try {
-            AccountDetail newAccount = manager.createAccount(customer, null);
-        } catch (NoSuchCustomerException ex) {
-            Logger.getLogger(CreateAccountCommand.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (CustomerBannedException ex) {
-            Logger.getLogger(CreateAccountCommand.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+
         return super.execute(request);   
     
 }

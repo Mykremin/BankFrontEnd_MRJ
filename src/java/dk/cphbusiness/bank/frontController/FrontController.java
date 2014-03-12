@@ -27,16 +27,17 @@ public class FrontController extends HttpServlet {
         roles.put(SecurityRole.Customer, "main.jsp");
     commands.put("login", new LoginCommand(roles, "login.jsp"));
     commands.put("logout", new LogoutCommand("loginStart.jsp", Arrays.asList(SecurityRole.All)));
-      
+          
     commands.put("list-customer-accounts", new ListAccountsCommand("account-list.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
     commands.put("list-customers", new ListCustomersCommand("customer-list.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
     commands.put("show-account-detail", new ShowAccountDetailCommand("account-detail.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
     commands.put("prepare-transfer", new TransferEditCommand("transfer-edit.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
     commands.put("save-transfer", new TransferSaveCommand("account-list.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
     commands.put("account-edit", new CreateAccountCommand("account-edit.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
+    commands.put("save-account", new SaveAccountCommand("account-edit.jsp", Arrays.asList(SecurityRole.Employee, SecurityRole.SuperEmployee)));
     
     commands.put("customer-edit", new CreateCustomerCommand("customer-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
-    commands.put("save-customer", new SaveCustomerCommand("customer-list.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
+    commands.put("save-customer", new SaveCustomerCommand("customer-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     commands.put("customer-update", new ShowCustomerCommand("customer-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     commands.put("save-updated-customer", new SaveUpdatedCustomerCommand("customer-list.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     
