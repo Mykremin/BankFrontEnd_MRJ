@@ -5,7 +5,7 @@ import dk.cphbusiness.dummy.bank.control.DummyBankManager;
 
 public class Factory {
   private static Factory instance = null;
-  private final BankManager manager;
+  private BankManager manager;
   
   private Factory() {
     manager = new DummyBankManager();

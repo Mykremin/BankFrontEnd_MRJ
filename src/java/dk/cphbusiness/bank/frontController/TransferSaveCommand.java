@@ -49,6 +49,8 @@ public class TransferSaveCommand extends TargetCommand {
     request.setAttribute("target", target);
     request.setAttribute("source", source);
     
+
+    
         try {
             manager.transferAmount(amount, source, target);
         } catch (NoSuchAccountException ex) {
@@ -59,7 +61,9 @@ public class TransferSaveCommand extends TargetCommand {
             Logger.getLogger(TransferSaveCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
  
-    
+    AccountIdentifier id = AccountIdentifier.fromString(sourceAccount);
+    AccountDetail account = manager.showAccountHistory(id);
+    request.setAttribute("account", account);  
      return super.execute(request); //To change body of generated methods, choose Tools | Templates.
     }
     

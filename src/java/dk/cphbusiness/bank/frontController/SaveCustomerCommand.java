@@ -8,8 +8,10 @@ package dk.cphbusiness.bank.frontController;
 
 import dk.cphbusiness.bank.contract.BankManager;
 import dk.cphbusiness.bank.contract.dto.CustomerDetail;
+import dk.cphbusiness.bank.contract.dto.CustomerSummary;
 import dk.cphbusiness.bank.security.SecurityRole;
 import dk.cphbusiness.bank.view.Factory;
+import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
@@ -38,7 +40,10 @@ public class SaveCustomerCommand extends TargetCommand  {
         String email = request.getParameter("email");
         
         CustomerDetail customer = new CustomerDetail(cpr, title, firstName, lastName, street, postalCode, postalDistrict, phone, email);        
-        CustomerDetail newCustomer = manager.saveCustomer(customer);
+        manager.saveCustomer(customer);
+        
+        Collection<CustomerSummary> customers = manager.listCustomers();
+        request.setAttribute("customers", customers);
         
         return super.execute(request); 
     }

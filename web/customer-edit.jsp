@@ -53,8 +53,8 @@
                 <tr><td><b>Email:</b></td><td><input type="email" name="email" value="${showCustomer.email}" required></td></tr>
 
                 
-                <td><button type ="submit" name="command" value="save-customer">Save new customer</button></td>
-                <td><button type ="submit" name="command" value="save-updated-customer">Update customer</button></td>
+                <td><button type ="submit" name="command" value="save-customer">Save customer</button></td>
+                
                 
 
         </form>

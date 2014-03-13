@@ -33,6 +33,7 @@
         <img src="photos/mrj.jpg"/><br><h1><b><font size="10" color="orange">The MRJ Bank</font></b></h1>
 
         <h1><b><font size="6" color="black">- Account detail for account: ${account.number}</font></b></h1><br>
+        
 
         <hr/>
         <ul>
@@ -41,6 +42,11 @@
             <li>Interest: <fmt:formatNumber value="${account.interest}" maxFractionDigits="3" minFractionDigits="3"/></li>
             <li>Type: ${account.type}</li>
         </ul>
+        
+        <form action="Controller" method="post">
+            
+        <input type="hidden" name="number" value="${account.number}">
+            <button type="submit" name="command" value="prepare-transfer">Transfer</button>
 
         <table border='1'> 
 
