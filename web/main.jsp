@@ -16,7 +16,6 @@
     <img src="photos/mrj.jpg"/><br><h1><b><font size="10" color="orange">The MRJ Bank</font></b></h1>
         
         <h1><b><font size="6" color="black">- Main page</font></b></h1><br>
-        
 
         <hr/>
         <ul>
@@ -24,6 +23,7 @@
             <li> <a href ="Controller?command=list-customers">List customers</a></li>
             <li> <a href ="Controller?command=customer-edit">Create customer</a></li>
             <li> <a href ="Controller?command=logout">Log out</a></li>
+            <li> <a href ="Controller?command=hello">Test backend</a></li>
             
         </ul>
   </body>

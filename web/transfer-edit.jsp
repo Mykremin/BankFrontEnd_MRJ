@@ -22,8 +22,35 @@ Funktionaliteten for at overfører mellem de forskellige kontoer er ikke færdig
     th, td {
         padding: 0.8ex;    /* Det er afstanden mellem tekst og rækken*/
     } 
+  
+      #btncancel {
+     font: bold 11px Arial;
+     text-decoration: none;
+     background-color: #EEEEEE;
+     color: #333333;
+     padding: 2px 6px 2px 6px;
+     border-top: 1px solid #CCCCCC;
+     border-right: 1px solid #333333;
+     border-bottom: 1px solid #333333;
+     border-left: 1px solid #CCCCCC;
+}
+    
+      #mytransferform label.error { // gør errorcode teksten rød mm.
+        color:red; width:auto; font-size: small;
+        float : right; display: block;
+      }
+      
+      #mytransferform input.error { // gør textfielden rød kant
+        border:1px solid red;
+      }
+
 
 </style>
+<script src="js/jquery.min.js"></script> <!-- HUSK AT LÆGGE JQUERY OG VALIDATION LOKALT PGA HTTPS FORBINDELSEN -->
+<script src="js/jquery.validate.js"></script>
+<script src="js/TransferValidation.js">
+ 
+</script>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,7 +63,7 @@ Funktionaliteten for at overfører mellem de forskellige kontoer er ikke færdig
         <p>Customer: ${customer.cpr}</p>
         <hr/>
 
-        <form action="Controller" method="post">
+        <form id="mytransferform" action="Controller" method="post">
             
             <table border='1'> 
 
@@ -50,9 +77,9 @@ Funktionaliteten for at overfører mellem de forskellige kontoer er ikke færdig
                     <input type="hidden" name="source" value="${account.number}"><br>
                       
                        
-                    <td><button type ="submit" name="command" value="save-transfer">Transfer amount</button></td>
-                    <td><button type ="submit" name="command" value="list-customer-accounts">Cancel transfer</button></button></td>
-
+                    <td><button id="btntransfer" type ="submit" name="command" value="save-transfer">Transfer amount</button></td>
+                    <!--<td><button type ="submit" name="command" value="list-customer-accounts">Cancel transfer</button></button></td>-->
+                    <td><a id="btncancel" href="Controller?command=list-customer-accounts">Cancel transfer</a></td>
                 </tr>
             </table>
 

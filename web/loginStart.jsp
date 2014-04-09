@@ -26,16 +26,16 @@
         
         <ul>
       <c:if test="${pageContext.request.isUserInRole('Customer')==true}">
-        <li><a href="Controller?command=main">Customer main page</a></li>
+        <li><a href="Controller?command=main2">Customer main page</a></li>
       </c:if >
 
       <c:if test="${pageContext.request.isUserInRole('Employee')==true || 
                     pageContext.request.isUserInRole('SuperEmployee')==true}">
-        <li><a href="Controller?command=main">Employee Main page</a></li>
+        <li><a href="Controller?command=main2">Employee Main page</a></li>
       </c:if>
         
       <c:if test="${pageContext.request.isUserInRole('SuperEmployee')==true}">
-        <li><a href="Controller?command=main">Add Customer</a></li>
+        <li><a href="Controller?command=customer-edit">Add Customer</a></li>
       </c:if>
 
       <c:choose >

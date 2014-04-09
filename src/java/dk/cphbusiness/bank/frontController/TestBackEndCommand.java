@@ -7,32 +7,28 @@
 package dk.cphbusiness.bank.frontController;
 
 import dk.cphbusiness.bank.contract.BankManager;
-import dk.cphbusiness.bank.contract.dto.CustomerSummary;
 import dk.cphbusiness.bank.security.SecurityRole;
 import dk.cphbusiness.bank.view.Factory;
-import java.util.Collection;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author RidvanGurel
+ * @author Mykremin
  */
-public class ListCustomersCommand extends TargetCommand {
-    
-    public ListCustomersCommand(String target, List<SecurityRole> roles) {
+public class TestBackEndCommand extends TargetCommand {
+
+    public TestBackEndCommand(String target, List<SecurityRole> roles) {
         super(target, roles);
     }
 
     @Override
     public String execute(HttpServletRequest request) {
-            
-    BankManager manager = Factory.getInstance().getManager();
-    Collection<CustomerSummary> customers = manager.listCustomers();
-
-    request.setAttribute("customers", customers);
-      
-        return super.execute(request); 
+        BankManager manager = Factory.getInstance().getManager();
+        //String greeting = manager.sayHello("Mykremin");
+        //request.setAttribute("greeting", greeting);
+        
+       return super.execute(request); 
     }
     
 }

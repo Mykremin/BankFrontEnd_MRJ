@@ -38,8 +38,10 @@ public class SaveCustomerCommand extends TargetCommand  {
         String postalDistrict = request.getParameter("postalDistrict");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        //String passwordRep = request.getParameter("passwordRep");
         
-        CustomerDetail customer = new CustomerDetail(cpr, title, firstName, lastName, street, postalCode, postalDistrict, phone, email);        
+        CustomerDetail customer = new CustomerDetail(cpr, title, firstName, lastName, street, postalCode, postalDistrict, phone, email, password);        
         manager.saveCustomer(customer);
         
         Collection<CustomerSummary> customers = manager.listCustomers();

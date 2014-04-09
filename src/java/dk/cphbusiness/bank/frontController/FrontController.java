@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "FrontController", urlPatterns = {"/Controller"})
+//@WebServlet(name = "FrontController", urlPatterns = {"/Controller"})
 public class FrontController extends HttpServlet {
     private static FrontController instance = new FrontController();
   private final Map<String, Command> commands = new HashMap<>();
@@ -41,8 +41,11 @@ public class FrontController extends HttpServlet {
     commands.put("customer-update", new ShowCustomerCommand("customer-edit.jsp", Arrays.asList(SecurityRole.SuperEmployee)));
     
  
-    commands.put("back", new TargetCommand("main.jsp", Arrays.asList(SecurityRole.All)));
-    commands.put("main", new TargetCommand("main.jsp", Arrays.asList(SecurityRole.All)));
+    commands.put("back", new TargetCommand("loginStart.jsp", Arrays.asList(SecurityRole.All)));
+    commands.put("main", new TargetCommand("loginStart.jsp", Arrays.asList(SecurityRole.All)));
+    commands.put("main2", new TargetCommand("main.jsp", Arrays.asList(SecurityRole.All)));
+    
+    commands.put("hello", new TestBackEndCommand("testBackend.jsp", Arrays.asList(SecurityRole.All)));
     }
   
   @Override

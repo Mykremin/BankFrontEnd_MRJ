@@ -15,7 +15,7 @@ import dk.cphbusiness.bank.frontController.FrontController;
 import dk.cphbusiness.bank.frontController.LogoutCommand;
 import dk.cphbusiness.bank.frontController.ShowLoginCommand;
 
-@WebServlet(name = "Controller", urlPatterns = {"/SecurityController"})
+@WebServlet(name = "Controller", urlPatterns = {"/Controller"})
 public class Controller extends HttpServlet {
 
   private int PORT_NON_SSL;
