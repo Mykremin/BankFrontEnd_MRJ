@@ -22,6 +22,7 @@
             
             <li> <a href ="Controller?command=list-customers">List customers</a></li>
             <li> <a href ="Controller?command=customer-edit">Create customer</a></li>
+            <li> <a href ="Controller?command=wannabeKrak-requests">WannabeKrak requests(count)</a></li>
             <li> <a href ="Controller?command=logout">Log out</a></li>
             <li> <a href ="Controller?command=hello">Test backend</a></li>
             
