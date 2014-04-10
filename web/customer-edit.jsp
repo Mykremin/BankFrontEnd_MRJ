@@ -59,16 +59,17 @@
                         </select></td></tr>
                 <tr><td><b>Firstname:</b></td><td><input id="firstname" type="text" name="firstName" value="${showCustomer.firstName}"></td></tr>
                 <tr><td><b>Lastname:</b></td><td><input id="lastname" type="text" name="lastName" value="${showCustomer.lastName}"></td></tr>
-                <tr><td><b>Street:</b></td><td><input type="text" name="street" value="${showCustomer.street}"></td></tr>
-                <tr><td><b>Postalcode:</b></td><td><input type="text" name="postalCode" value="${showCustomer.postalCode}"></td></tr>
-                <tr><td><b>Postaldistrict:</b></td><td><input type="text" name="postalDistrict" value="${showCustomer.postalDistrict}"></td></tr>
-                <tr><td><b>Phone:</b></td><td><input type="text" name="phone" value="${showCustomer.phone}"></td></tr>
+                <tr><td><b>Street:</b></td><td><input id="street" type="text" name="street" value="${showCustomer.street}"></td></tr>
+                <tr><td><b>Postalcode:</b></td><td><input id="postalcode" type="text" name="postalCode" value="${showCustomer.postalCode}"></td></tr>
+                <tr><td><b>Postaldistrict:</b></td><td><input id="postaldistrict" type="text" name="postalDistrict" value="${showCustomer.postalDistrict}"></td></tr>
+                <tr><td><b>Phone:</b></td><td><input id="phone" type="text" name="phone" value="${showCustomer.phone}"></td></tr>
                 <tr><td><b>Email:</b></td><td><input id="email" type="email" name="email" value="${showCustomer.email}"></td></tr>
                 <tr><td><b>Password:</b></td><td><input id="password" type="password" name="password" value="${showCustomer.password}"></td></tr>
                 <tr><td><b>Password repeat:</b></td><td><input id="passwordrep" type="password" name="passwordrep" value="${showCustomer.password}"></td></tr>
 
 
                 <td><button id="submit" type ="submit" name="command" value="save-customer">Save customer</button></td>
+                <td><button id="getaddress">Get address from phone number</button></td>
 
 
 

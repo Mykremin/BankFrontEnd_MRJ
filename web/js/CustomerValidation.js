@@ -1,5 +1,29 @@
 $(document).ready(function() {
         // validate the comment form when it is submitted
+        $("#getaddress").click(function(){
+                getAddressByPhone();
+                
+            });
+            
+             function getAddressByPhone(){
+                $.ajax({
+                    url: "GetAddressRestServlet",
+                    data: {
+                        phone: $("#phone").val()
+                    },
+                    cache: false,
+                    dataType: "json"
+                    
+                }).done(function(data){
+                    $("#firstname").val(data.firstName),
+                    $("#lastname").val(data.lastName),
+                    $("#street").val(data.address),
+                    $("#postalcode").val(data.zip),
+                    $("#postaldistrict").val(data.city),
+                    $("#email").val(data.email);
+                });
+            }
+        
         $("#mycustomerform").validate({
           rules: { // her bruges name
             cpr: {required: true, minlength: 11, maxlength: 11, remote: "CprValidationServlet"},
