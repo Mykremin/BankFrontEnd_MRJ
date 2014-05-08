@@ -68,7 +68,8 @@ public class GetAddressRestServlet extends HttpServlet {
             
             String phoneNumber = request.getParameter("phone");
 
-            String server = "http://datdb.cphbusiness.dk:8080/KrakRemote";
+            //String server = "http://datdb.cphbusiness.dk:8080/KrakRemote"; lars server, nedenunder vores egen rest
+            String server = "http://localhost:8080/WannabeKrak-Rest";
             String parameter = phoneNumber;
             String restResource = "/service/person/";
             String mime = "application/json";
