@@ -14,6 +14,7 @@ import dk.cphbusiness.bank.frontController.Command;
 import dk.cphbusiness.bank.frontController.FrontController;
 import dk.cphbusiness.bank.frontController.LogoutCommand;
 import dk.cphbusiness.bank.frontController.ShowLoginCommand;
+import dk.cphbusiness.bank.mobileAgent.UAgentInfo;
 
 @WebServlet(name = "Controller", urlPatterns = {"/Controller"})
 public class Controller extends HttpServlet {
@@ -27,6 +28,17 @@ public class Controller extends HttpServlet {
 
    protected void processRequest(HttpServletRequest request, HttpServletResponse response) // alle request går igennem controlleren. for hvergang der kommer et request bruges denne metode.
           throws ServletException, IOException {
+       
+        String accept = request.getHeader("ACCEPT");
+        String userAgent = request.getHeader("User-Agent");
+        
+        UAgentInfo detector = new UAgentInfo(userAgent, accept);
+        if(detector.detectMobileQuick()){
+            response.sendRedirect("mobilePage.html");
+        }else{
+            
+        
+       
     String cmdStr = request.getParameter("command");
     cmdStr = cmdStr!=null ? cmdStr: "main";
     Command command = FrontController.getInstance().getCommand(cmdStr, request);
@@ -46,7 +58,7 @@ public class Controller extends HttpServlet {
       request.getRequestDispatcher(path).forward(request, response);
     }
     
-
+        }
   }
 
   @Override

@@ -37,7 +37,7 @@ Values: TRUE or FALSE</description>
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>loginStart.jsp</welcome-file>
+        <welcome-file>Controller</welcome-file>
     </welcome-file-list>
     <error-page>
         <exception-type>java.lang.SecurityException</exception-type>
